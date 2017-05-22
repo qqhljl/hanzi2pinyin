@@ -1,0 +1,56 @@
+package test;
+
+import redis.clients.jedis.Jedis;
+
+public class RedisJava1 {
+
+	//杩炴帴鏈湴redis 鏈嶅姟
+	public static void main(String[] args) {
+	      //杩炴帴鏈湴Redis 鏈嶅姟
+	      Jedis jedis = new Jedis("localhost");
+	      System.out.println("Connection to server sucessfully");
+	      //鏌ョ湅鏈嶅姟鏄惁杩愯
+	      System.out.println("Server is running: "+jedis.ping());
+	 }
+	
+	//Redis Java String(瀛楃) 瀹炰緥
+/*	public static void main(String[] args) {
+	      //杩炴帴鏈湴Redis 鏈嶅姟
+	      Jedis jedis = new Jedis("localhost");
+	      System.out.println("Connection to server sucessfully");
+	      //璁剧疆 redis 瀛楃涓叉暟锟�?
+	      jedis.set("runoobkey", "Redis tutorial");
+	     // 鑾峰彇瀛樺偍鐨勬暟鎹苟杈撳嚭
+	     System.out.println("Stored string in redis:: "+ jedis.get("runoobkey"));
+	 }*/
+	
+	//Redis Java List(鍒楄〃) 瀹炰緥
+/*	public static void main(String[] args) {
+	      //杩炴帴鏈湴 Redis 鏈嶅姟
+	      Jedis jedis = new Jedis("localhost");
+	      System.out.println("Connection to server sucessfully");
+	      //瀛樺偍鏁版嵁鍒板垪琛ㄤ腑
+	      jedis.lpush("tutorial-list", "Redis");
+	      jedis.lpush("tutorial-list", "Mongodb");
+	      jedis.lpush("tutorial-list", "Mysql");
+	     // 鑾峰彇瀛樺偍鐨勬暟鎹苟杈撳嚭
+	     List<String> list = jedis.lrange("tutorial-list", 0 ,5);
+	     for(int i=0; i<list.size(); i++) {
+	       System.out.println("Stored string in redis:: "+list.get(i));
+	     }
+	 }*/
+	
+	
+	//Redis Java Keys 瀹炰緥
+	/* public static void main(String[] args) {
+	      //杩炴帴鏈湴 Redis 鏈嶅姟
+	      Jedis jedis = new Jedis("localhost");
+	      System.out.println("Connection to server sucessfully");
+	      
+	     // 鑾峰彇鏁版嵁骞惰緭
+	     List<String> list = jedis.keys("*");
+	     for(int i=0; i<list.size(); i++) {
+	       System.out.println("List of stored keys:: "+list.get(i));
+	     }
+	   }*/
+}
